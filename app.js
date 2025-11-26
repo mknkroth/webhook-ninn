@@ -26,7 +26,11 @@ app.post('/webhook/ninn', (req, res) => {
   res.status(200).send('Webhook received');
 });
 
+app.get('/', (req, res) => {
+  res.send('OK from webhook-ninn');
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`🚀 Webhook server running on http://localhost:${PORT}`);
+  console.log(`🚀 Webhook server running on port ${PORT}`);
 });
